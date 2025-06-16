@@ -2,7 +2,7 @@
 <h3 align="center">💻 Full Stack MERN Developer | 🚀 Aspiring Data Scientist | 🎯 Lifelong Learner</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?center=true&vCenter=true&lines=Full+Stack+Web+Developer;MERN+Stack+Specialist;DotNet+%7C+C%23+%7C+PHP+%7C+Python;Aspiring+Data+Scientist+%26+ML+Engineer;Open+Source+Contributor+%7C+Lifelong+Learner" />
+  <img src="https://readme-typing-svg.herokuapp.com?center=true&vCenter=true&lines=Full+Stack+Web+Developer;MERN+Stack+Specialist;DotNet+%7C+C%23+%7C+PHP+%7C+Python;Aspiring+Data+Scientist;Open+Source+Contributor+%7C+Lifelong+Learner" />
 </p>
 
 ---
