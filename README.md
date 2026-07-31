@@ -70,16 +70,5 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=taharukaiya&layout=compact&theme=radical" />
 </p>
 
----
 
-## 🧩 Fun Facts
-
-- 🎮 I enjoy light gaming during breaks  
-- 🎬 A big fan of movies & web series — always up for a good recommendation  
-- 🌍 I love learning about tech that impacts lives  
-- 💭 Motto: *"Code. Learn. Build. Repeat."*
-
----
-
-⭐️ *If you like my work, give it a star and let's connect!*
 
