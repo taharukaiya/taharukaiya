@@ -18,23 +18,23 @@ export default function Navbar() {
   const [active, setActive] = useState('#home');
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Track which section is in view via IntersectionObserver
+  // When the user clicks a nav link we trigger a smooth scroll.
+  // The scroll events that fire during that animation would normally
+  // override the active state we just set, causing the pill to snap
+  // back and then re-glide. This lock prevents that.
+  const isClickScrolling = useRef(false);
+  const clickScrollTimer = useRef(null);
+
   useEffect(() => {
     const ids = navLinks.map(l => l.href.slice(1));
-    const observers = [];
-
-    // We use a map to track which sections are "visible"
-    // The one closest to the top wins
-    const visibleMap = {};
 
     const pickActive = () => {
-      // Find the section whose top is closest to (but still below) the navbar
       let best = null;
       let bestTop = -Infinity;
       for (const id of ids) {
         const el = document.getElementById(id);
         if (!el) continue;
-        const top = el.getBoundingClientRect().top - 90; // 90px offset
+        const top = el.getBoundingClientRect().top - 90;
         if (top <= 0 && top > bestTop) {
           bestTop = top;
           best = id;
@@ -45,7 +45,11 @@ export default function Navbar() {
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      pickActive();
+      // Only update active from scroll if the user is manually scrolling,
+      // not when we're programmatically scrolling after a click.
+      if (!isClickScrolling.current) {
+        pickActive();
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -62,7 +66,18 @@ export default function Navbar() {
   const handleNavClick = (e, href) => {
     e.preventDefault();
     const id = href.slice(1);
+
+    // Immediately move the pill to the clicked tab
     setActive(href);
+
+    // Lock scroll-based tracking for 1 s so the scroll events fired
+    // during the smooth-scroll animation don't fight the pill position
+    isClickScrolling.current = true;
+    clearTimeout(clickScrollTimer.current);
+    clickScrollTimer.current = setTimeout(() => {
+      isClickScrolling.current = false;
+    }, 1000);
+
     if (menuOpen) {
       setMenuOpen(false);
       setTimeout(() => scrollToSection(id), 150);
