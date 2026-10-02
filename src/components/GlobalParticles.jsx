@@ -21,18 +21,18 @@ export default function GlobalParticles() {
 
     const ctx = canvas.getContext('2d');
 
-    // More particles spread across the full page height
-    const count = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 14000), 90);
+    // More particles spread across the full page height (denser & higher limit)
+    const count = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 8000), 160);
     const particles = Array.from({ length: count }, () => ({
       x:     Math.random() * window.innerWidth,
       y:     Math.random() * window.innerHeight,
-      r:     Math.random() * 1.6 + 0.3,
-      vx:    (Math.random() - 0.5) * 0.35,
-      vy:    (Math.random() - 0.5) * 0.35,
-      alpha: Math.random() * 0.35 + 0.08,
+      r:     Math.random() * 2.0 + 0.5, // Slightly larger particles
+      vx:    (Math.random() - 0.5) * 0.45, // Slightly faster movement
+      vy:    (Math.random() - 0.5) * 0.45,
+      alpha: Math.random() * 0.4 + 0.15, // More opaque dots
     }));
 
-    const CONNECTION_DIST = 130;
+    const CONNECTION_DIST = 160; // Connect from further away
 
     let animId;
     const animate = () => {
@@ -58,12 +58,13 @@ export default function GlobalParticles() {
           const dy   = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < CONNECTION_DIST) {
-            const lineAlpha = (1 - dist / CONNECTION_DIST) * 0.12;
+            // More visible lines
+            const lineAlpha = (1 - dist / CONNECTION_DIST) * 0.25;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.strokeStyle = `rgba(147, 51, 234, ${lineAlpha})`;
-            ctx.lineWidth   = 0.6;
+            ctx.lineWidth   = 0.8;
             ctx.stroke();
           }
         }
@@ -83,7 +84,7 @@ export default function GlobalParticles() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 0, opacity: 0.7 }}
+      style={{ zIndex: 0, opacity: 0.9 }}
     />
   );
 }
