@@ -21,7 +21,7 @@ function AchievementCard({ item, index }) {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       whileHover={{ y: -6, scale: 1.02 }}
-      className="gradient-border glass-card p-6 relative overflow-hidden"
+      className="gradient-border glass-card p-6 relative overflow-hidden h-full flex flex-col"
     >
       {/* Background gradient */}
       <div
@@ -77,10 +77,12 @@ export default function Achievements() {
           </p>
         </motion.div>
 
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Centered Flex Container */}
+        <div className="flex flex-wrap justify-center gap-6">
           {achievements.map((item, i) => (
-            <AchievementCard key={item.id} item={item} index={i} />
+            <div key={item.id} className="w-full sm:w-[calc(50%-12px)] lg:w-[340px] flex-shrink-0">
+              <AchievementCard item={item} index={i} />
+            </div>
           ))}
         </div>
 
