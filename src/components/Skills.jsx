@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { skills } from '../data/portfolioData';
 
-const categories = ['All', 'Frontend', 'Backend', 'Tools'];
+const categories = ['All', 'Frontend', 'Backend', 'AI / ML', 'Tools'];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -53,7 +53,8 @@ export default function Skills() {
     if (active === 'Frontend') return skills.frontend;
     if (active === 'Backend') return skills.backend;
     if (active === 'Tools') return skills.tools;
-    return [...skills.frontend, ...skills.backend, ...skills.tools];
+    if (active === 'AI / ML') return skills.aiml;
+    return [...skills.frontend, ...skills.backend, ...(skills.aiml || []), ...skills.tools];
   };
 
   return (

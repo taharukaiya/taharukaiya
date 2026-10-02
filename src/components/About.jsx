@@ -171,9 +171,15 @@ export default function About() {
                     <span className="text-white">,</span>
                     {'\n'}
                     {'  '}
-                    <span className="text-blue-300">special</span>
+                    <span className="text-blue-300">aiml</span>
                     <span className="text-white">: </span>
-                    <span className="text-emerald-300">[&apos;Blockchain&apos;, &apos;Azure AI&apos;]</span>
+                    <span className="text-emerald-300">[&apos;ML&apos;, &apos;Deep Learning&apos;, &apos;AI Integration&apos;]</span>
+                    <span className="text-white">,</span>
+                    {'\n'}
+                    {'  '}
+                    <span className="text-blue-300">research</span>
+                    <span className="text-white">: </span>
+                    <span className="text-emerald-300">[&apos;IEEE&apos;, &apos;Wiley&apos;, &apos;3 Papers&apos;]</span>
                     <span className="text-white">,</span>
                     {'\n'}
                     {'  '}

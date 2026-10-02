@@ -82,14 +82,12 @@ export default function Navbar() {
         <motion.a
           href="#home"
           onClick={(e) => handleNavClick(e, '#home')}
-          whileHover={{ scale: 1.04 }}
-          className="flex items-center gap-2.5 flex-shrink-0"
+          whileHover={{ scale: 1.02 }}
+          className="flex items-center flex-shrink-0"
         >
-          <span className="font-black text-2xl sm:text-3xl tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-violet-400">
-            RT.
-          </span>
-          <span className="text-white font-bold text-base hidden sm:block">
-            Rukaiya<span className="text-purple-400"> Taha</span>
+          <span className="font-black tracking-tight" style={{ fontSize: 'clamp(1rem, 3.5vw, 1.25rem)' }}>
+            <span className="text-white">Rukaiya </span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-violet-400">Taha</span>
           </span>
         </motion.a>
 

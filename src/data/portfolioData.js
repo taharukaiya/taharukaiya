@@ -3,30 +3,30 @@
 export const personalInfo = {
   name: "Rukaiya Taha",
   title: "Software Engineer",
-  subtitle: "Full-Stack Developer & Problem Solver",
+  subtitle: "Full-Stack Developer & AI/ML Enthusiast",
   location: "Dhaka, Bangladesh",
   email: "taharukaiyah@gmail.com",
   github: "https://github.com/taharukaiya",
-  twitter: "https://twitter.com/RukaiyaTaha", // kept for ref
   facebook: "https://www.facebook.com/taharu2003",
   linkedin: "https://www.linkedin.com/in/rukaiya-taha-85b6361b4/",
   hireable: true,
-  bio: "Aspiring Software Engineer with experience in full-stack web development and software design. Skilled in React.js, Next.js, Node.js, Express.js, PostgreSQL, Prisma ORM, Python, Django, and REST API development. Passionate about building scalable applications, solving complex problems, and applying emerging technologies such as AI/ML and blockchain to create innovative solutions. Eager to contribute to dynamic engineering teams while expanding technical and professional expertise.",
+  bio: "Aspiring Software Engineer with hands-on experience in full-stack web development, AI/ML integration, and research. Skilled in React.js, Next.js, Node.js, Express.js, Django, PostgreSQL, Python, and REST APIs. Passionate about applying Machine Learning, Deep Learning, and emerging technologies like blockchain to solve real-world problems. Published researcher and Microsoft Learn Student Ambassador, eager to contribute to innovative engineering teams.",
   shortBio: "Building digital experiences that matter.",
   taglines: [
     "Software Engineer",
     "Full-Stack Developer",
+    "AI/ML Enthusiast",
+    "Research Enthusiast",
     "Problem Solver",
     "Open Source Contributor",
-    "Tech Enthusiast",
   ],
 };
 
 export const skills = {
   frontend: [
     { name: "React.js", level: 90, icon: "⚛️" },
-    { name: "JavaScript", level: 90, icon: "🟨" },
     { name: "Next.js", level: 80, icon: "▲" },
+    { name: "JavaScript", level: 90, icon: "🟨" },
     { name: "Tailwind CSS", level: 90, icon: "🎨" },
     { name: "HTML5 / CSS3", level: 95, icon: "🌐" },
     { name: "Bootstrap", level: 85, icon: "🅱️" },
@@ -34,10 +34,18 @@ export const skills = {
   backend: [
     { name: "Node.js", level: 85, icon: "💚" },
     { name: "Express.js", level: 85, icon: "🚀" },
-    { name: "Python / Django", level: 75, icon: "🐍" },
+    { name: "Python / Django", level: 80, icon: "🐍" },
     { name: "PostgreSQL", level: 80, icon: "🐘" },
     { name: "MongoDB", level: 80, icon: "🍃" },
     { name: "REST APIs", level: 90, icon: "🔗" },
+  ],
+  aiml: [
+    { name: "Machine Learning", level: 75, icon: "🤖" },
+    { name: "Deep Learning", level: 70, icon: "🧠" },
+    { name: "AI Integration", level: 80, icon: "⚡" },
+    { name: "Python (ML)", level: 80, icon: "🐍" },
+    { name: "Azure AI / OpenAI", level: 75, icon: "☁️" },
+    { name: "Data Analysis", level: 72, icon: "📊" },
   ],
   tools: [
     { name: "Git & GitHub", level: 90, icon: "🐙" },
@@ -48,9 +56,8 @@ export const skills = {
     { name: "JWT Auth", level: 85, icon: "🔐" },
   ],
   other: [
-    "ASP.NET Core", "MySQL", "Better Auth", 
-    "Blockchain", "Solidity", "AI/ML Integration",
-    "Agile / Scrum"
+    "ASP.NET Core", "MySQL", "Better Auth",
+    "Blockchain", "Solidity", "Agile / Scrum",
   ],
 };
 
@@ -70,7 +77,7 @@ export const projects = [
   {
     id: 2,
     title: "MediChain",
-    description: "A blockchain-based web application with QR code integration to verify medicine authenticity and track supply chain records. The system improved transparency and enabled users to quickly verify genuine medicines, helping reduce counterfeit risks.",
+    description: "A blockchain-based web application with QR code integration to verify medicine authenticity and track supply chain records, reducing counterfeit drug risks.",
     tech: ["React.js", "Tailwind CSS", "Solidity", "Ethers.js"],
     github: "https://github.com/taharukaiya/MediChain-BlockchainMedicineVerification",
     live: null,
@@ -83,7 +90,7 @@ export const projects = [
   {
     id: 3,
     title: "MangoMart",
-    description: "A full-stack e-commerce platform for mango sales using React.js, Tailwind CSS, Django, and PostgreSQL, featuring a customer shopping interface and an admin dashboard for managing products, stock, pricing, and orders.",
+    description: "A full-stack e-commerce platform for mango sales using React.js, Django, and PostgreSQL, featuring a customer shopping interface and an admin dashboard.",
     tech: ["React.js", "Tailwind CSS", "Django", "PostgreSQL"],
     github: "https://github.com/taharukaiya/MangoMart-Mango-Selling-Website",
     live: null,
@@ -95,7 +102,7 @@ export const projects = [
   {
     id: 4,
     title: "MLSA Learning Management System",
-    description: "AI-powered LMS built for the MLSA program. Uses React.js and Tailwind (frontend) and Express.js (backend) with Azure Document Intelligence for document analysis.",
+    description: "AI-powered LMS for the MLSA program using Azure Document Intelligence for intelligent document analysis and processing.",
     tech: ["React", "Tailwind", "Express.js", "Azure AI", "Node.js"],
     github: "https://github.com/taharukaiya/MLSA-Learning-Management-System",
     live: null,
@@ -107,7 +114,7 @@ export const projects = [
   {
     id: 5,
     title: "Chill Gamer",
-    description: "A game review and discovery platform where gamers can explore, review, and discuss their favorite games. Features user authentication and dynamic content.",
+    description: "A game review and discovery platform where gamers can explore, review, and discuss their favorite games.",
     tech: ["React", "JavaScript", "Firebase", "Tailwind CSS"],
     github: "https://github.com/taharukaiya/Chill-Gamer",
     live: null,
@@ -119,7 +126,7 @@ export const projects = [
   {
     id: 6,
     title: "Discount PRO",
-    description: "A coupon and discount aggregation platform helping users find the best deals. Features a clean UI with search and filter functionality.",
+    description: "A coupon and discount aggregation platform helping users find the best deals with search and filter functionality.",
     tech: ["React", "JavaScript", "Firebase", "Node.js"],
     github: "https://github.com/taharukaiya/Discount-PRO",
     live: null,
@@ -131,7 +138,7 @@ export const projects = [
   {
     id: 7,
     title: "Gadget Heaven",
-    description: "An interactive gadget e-commerce platform with cart management, wishlist, and comparison features using React Context API and local storage.",
+    description: "An interactive gadget e-commerce platform with cart management, wishlist, and comparison features using React Context API.",
     tech: ["React", "JavaScript", "Tailwind CSS", "Context API"],
     github: "https://github.com/taharukaiya/Gadget-Heaven",
     live: null,
@@ -142,30 +149,7 @@ export const projects = [
   },
 ];
 
-export const experience = [
-  {
-    id: 1,
-    type: "work",
-    title: "Beta Student Ambassador",
-    organization: "Microsoft Learn Student Ambassadors (MLSA)",
-    duration: "July 2024 to Sep 2026",
-    location: "Global / Remote",
-    description: "Actively engaged in Microsoft Learn initiatives, promoting technical learning and skill development among students. Led an international team of students from multiple countries to develop an AI-based project and a Learning Management System (LMS). Coordinated cross-border collaboration, task distribution, and system design to deliver a full-stack scalable platform.",
-    highlights: ["Leadership", "Community Building", "AI Projects", "Global Team Collaboration"],
-    icon: "🌐",
-  },
-  {
-    id: 2,
-    type: "work",
-    title: "Programmer",
-    organization: "IUBAT Innovation and Entrepreneurship Center (IIEC)",
-    duration: "Feb 2024 to Jan 2025",
-    location: "Dhaka, Bangladesh",
-    description: "Mentored students in programming and guided project development. Assisted in debugging, system design, and implementation.",
-    highlights: ["Mentorship", "System Design", "Debugging", "Project Development"],
-    icon: "💻",
-  },
-];
+export const experience = [];
 
 export const education = [
   {
@@ -175,7 +159,7 @@ export const education = [
     organization: "International University of Business Agriculture and Technology (IUBAT)",
     duration: "Sep 2022 - Sep 2026 (Expected)",
     location: "Dhaka, Bangladesh",
-    description: "Studying core CS fundamentals including data structures, algorithms, databases, software engineering, and computer networks.",
+    description: "Studying core CS fundamentals including data structures, algorithms, databases, software engineering, computer networks, and AI/ML.",
     highlights: ["CGPA: 3.97/4.00", "Award for Academic Excellence (2024 & 2026)"],
     icon: "🎓",
   },
@@ -209,30 +193,59 @@ export const achievements = [
     title: "Award for Academic Excellence",
     organization: "International University of Business Agriculture and Technology (IUBAT)",
     year: "2024 & 2026",
-    description: "Recognized for maintaining an outstanding academic record (CGPA: 3.97).",
+    description: "Recognized for maintaining an outstanding academic record (CGPA: 3.97/4.00).",
     icon: "🏆",
-    color: "from-blue-500 to-blue-600",
+    color: "from-purple-500 to-violet-600",
+  },
+  {
+    id: 2,
+    title: "Published Researcher",
+    organization: "IEEE & Wiley (Engineering Reports)",
+    year: "2025",
+    description: "Published 3 research papers in IEEE COMPAS and Wiley Engineering Reports on AI/ML and Blockchain in healthcare.",
+    icon: "📄",
+    color: "from-blue-500 to-indigo-600",
   },
 ];
 
 export const extracurricular = [
   {
     id: 1,
+    title: "Beta Student Ambassador",
+    organization: "Microsoft Learn Student Ambassadors (MLSA)",
+    duration: "July 2024 - Sep 2026",
+    role: "Beta Ambassador",
+    description: "Promoting technical learning and building AI/ML tech communities. Led an international team from multiple countries to develop an AI-based project and a full-stack Learning Management System.",
+    activities: ["AI Project Leadership", "Community Building", "International Team Coordination", "Tech Workshops"],
+    icon: "🌐",
+  },
+  {
+    id: 2,
+    title: "Programmer",
+    organization: "IUBAT Innovation and Entrepreneurship Center (IIEC)",
+    duration: "Feb 2024 - Jan 2025",
+    role: "Programmer & Mentor",
+    description: "Mentored students in programming and guided software project development. Assisted in debugging, system design, and implementation of innovative solutions.",
+    activities: ["Student Mentorship", "System Design", "Debugging", "Project Development"],
+    icon: "💻",
+  },
+  {
+    id: 3,
     title: "Treasurer",
     organization: "IEEE Computer Society IUBAT Student Branch Chapter",
-    duration: "December 2025 to Sep 2026",
+    duration: "December 2025 - Sep 2026",
     role: "Treasurer",
-    description: "Managed budgeting and financial operations for events.",
+    description: "Managed budgeting and financial operations for all chapter events and programs.",
     activities: ["Budget Management", "Event Financial Planning", "Leadership"],
     icon: "💼",
   },
   {
-    id: 2,
+    id: 4,
     title: "Academic Mentor",
     organization: "IUBAT IT Society",
-    duration: "May 2022 to January 2025",
+    duration: "May 2022 - January 2025",
     role: "Academic Mentor",
-    description: "Guided students in programming, problem-solving, and coursework.",
+    description: "Guided students in programming, problem-solving, and coursework across multiple semesters.",
     activities: ["Mentoring", "Problem Solving", "Coursework Guidance"],
     icon: "🤝",
   },
@@ -244,9 +257,9 @@ export const publications = [
     title: "An Explainable Triple-Layered Ensemble Model for Early Prediction of Suicide Risk Using Machine Learning",
     conference: "Engineering Reports (Wiley)",
     year: "2025",
-    description: "A machine learning study focusing on explainable models for early suicide risk prediction.",
+    description: "A machine learning study using explainable ensemble models for early suicide risk prediction, combining clinical data with interpretable AI.",
     authors: ["Rukaiya Taha", "et al."],
-    tags: ["Machine Learning", "Healthcare", "AI", "Ensemble Model"],
+    tags: ["Machine Learning", "Healthcare", "AI", "Ensemble Model", "Explainable AI"],
     link: "#",
     icon: "🧠",
   },
@@ -255,7 +268,7 @@ export const publications = [
     title: "A Web-Based Blockchain Framework to Prevent Counterfeit Medicines via QR Code Verification",
     conference: "IEEE 2nd International Conference on Computing, Applications and Systems (COMPAS)",
     year: "2025",
-    description: "Research proposing a decentralized framework to combat counterfeit medicines using blockchain and QR codes.",
+    description: "Research proposing a decentralized framework to combat counterfeit medicines using blockchain and QR code verification.",
     authors: ["Rukaiya Taha", "et al."],
     tags: ["Blockchain", "Healthcare", "QR Code Verification"],
     link: "#",
@@ -266,9 +279,9 @@ export const publications = [
     title: "SMOTE-Enhanced Ensemble Learning for Hepatitis C Risk Stratification with Feature Importance Analysis",
     conference: "IEEE 2nd International Conference on Computing, Applications and Systems (COMPAS)",
     year: "2025",
-    description: "An ensemble learning approach to improve Hepatitis C risk stratification.",
+    description: "An ensemble learning approach with SMOTE oversampling to improve Hepatitis C risk stratification using feature importance analysis.",
     authors: ["Rukaiya Taha", "et al."],
-    tags: ["Machine Learning", "Healthcare", "Ensemble Learning", "SMOTE"],
+    tags: ["Machine Learning", "Healthcare", "Ensemble Learning", "SMOTE", "Deep Learning"],
     link: "#",
     icon: "🔬",
   },
@@ -277,8 +290,8 @@ export const publications = [
 export const stats = [
   { label: "Projects Built", value: 18, suffix: "+" },
   { label: "GitHub Repos", value: 18, suffix: "" },
-  { label: "Technologies", value: 20, suffix: "+" },
-  { label: "Years Coding", value: 3, suffix: "+" },
+  { label: "Technologies", value: 25, suffix: "+" },
+  { label: "Publications", value: 3, suffix: "" },
 ];
 
 export const navLinks = [
@@ -286,7 +299,6 @@ export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
   { label: "Achievements", href: "#achievements" },
   { label: "Publications", href: "#publications" },
   { label: "Contact", href: "#contact" },

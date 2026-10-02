@@ -12,11 +12,11 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-10">
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <span className="font-black text-3xl tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-violet-400">
-              RT.
-            </span>
             <div>
-              <p className="text-white font-bold">{personalInfo.name}</p>
+              <p className="font-black text-xl tracking-tight">
+                <span className="text-white">Rukaiya </span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-violet-400">Taha</span>
+              </p>
               <p className="text-purple-400 text-sm">{personalInfo.title}</p>
             </div>
           </div>
