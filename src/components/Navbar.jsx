@@ -4,11 +4,11 @@ import { navLinks } from '../data/portfolioData';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { personalInfo } from '../data/portfolioData';
 
-// Smooth scroll utility — works reliably on all browsers
+// Smooth scroll utility
 function scrollToSection(id) {
   const el = document.getElementById(id);
   if (!el) return;
-  const offset = 80; // navbar height
+  const offset = 80;
   const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
   window.scrollTo({ top, behavior: 'smooth' });
 }
@@ -17,25 +17,35 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState('#home');
   const [menuOpen, setMenuOpen] = useState(false);
-  const indicatorRef = useRef({});
 
+  // Track which section is in view via IntersectionObserver
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+    const ids = navLinks.map(l => l.href.slice(1));
+    const observers = [];
 
-      // Detect active section
-      const ids = navLinks.map(l => l.href.slice(1));
-      let currentActive = '#home';
+    // We use a map to track which sections are "visible"
+    // The one closest to the top wins
+    const visibleMap = {};
+
+    const pickActive = () => {
+      // Find the section whose top is closest to (but still below) the navbar
+      let best = null;
+      let bestTop = -Infinity;
       for (const id of ids) {
         const el = document.getElementById(id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 120) {
-            currentActive = '#' + id;
-          }
+        if (!el) continue;
+        const top = el.getBoundingClientRect().top - 90; // 90px offset
+        if (top <= 0 && top > bestTop) {
+          bestTop = top;
+          best = id;
         }
       }
-      setActive(currentActive);
+      if (best) setActive('#' + best);
+    };
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+      pickActive();
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -53,8 +63,6 @@ export default function Navbar() {
     e.preventDefault();
     const id = href.slice(1);
     setActive(href);
-    // Close menu first, then scroll after a small delay so the
-    // menu collapse animation doesn't fight the scroll
     if (menuOpen) {
       setMenuOpen(false);
       setTimeout(() => scrollToSection(id), 150);
@@ -78,6 +86,7 @@ export default function Navbar() {
       }}
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-6 flex items-center justify-between h-16 md:h-20">
+
         {/* ── Logo ─────────────────────────────────────── */}
         <motion.a
           href="#home"
@@ -92,6 +101,15 @@ export default function Navbar() {
         </motion.a>
 
         {/* ── Desktop Nav ───────────────────────────────── */}
+        {/*
+          The gliding pill works by:
+          1. Wrapping all nav links in a single relative container.
+          2. Rendering ONE <motion.span> with layoutId="nav-pill" that is always
+             inside the currently-active <a> tag.
+          3. Framer Motion's layout animation automatically interpolates that
+             element's position/size when it moves to a different parent — this
+             creates the smooth glide effect.
+        */}
         <div className="hidden lg:flex items-center gap-0.5">
           {navLinks.map((link) => {
             const isActive = active === link.href;
@@ -100,21 +118,21 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                ref={(el) => (indicatorRef.current[link.href] = el)}
                 className={`relative px-3 xl:px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                  isActive
-                    ? 'text-purple-300'
-                    : 'text-slate-400 hover:text-white'
+                  isActive ? 'text-purple-200' : 'text-slate-400 hover:text-white'
                 }`}
               >
-                {/* Background pill — rendered via CSS, not layoutId (avoids animation bug) */}
+                {/* The shared pill — only rendered inside the active link.
+                    layoutId makes Framer Motion animate it between positions. */}
                 {isActive && (
-                  <span
+                  <motion.span
+                    layoutId="nav-pill"
                     className="absolute inset-0 rounded-lg pointer-events-none"
                     style={{
                       background: 'rgba(124, 58, 237, 0.15)',
                       border: '1px solid rgba(168, 85, 247, 0.3)',
                     }}
+                    transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                   />
                 )}
                 <span className="relative z-10">{link.label}</span>
@@ -163,20 +181,35 @@ export default function Navbar() {
             style={{ borderTop: '1px solid rgba(124, 58, 237, 0.15)' }}
           >
             <div className="px-5 py-3 flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
-                    active === link.href
-                      ? 'text-purple-300 bg-purple-500/10 border border-purple-500/20'
-                      : 'text-slate-400 hover:text-white hover:bg-white/5'
-                  }`}
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = active === link.href;
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className={`relative px-4 py-3 rounded-xl text-sm font-medium transition-colors duration-200 ${
+                      isActive
+                        ? 'text-purple-200'
+                        : 'text-slate-400 hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    {/* Separate layoutId for mobile so it doesn't conflict with desktop */}
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-pill-mobile"
+                        className="absolute inset-0 rounded-xl pointer-events-none"
+                        style={{
+                          background: 'rgba(124, 58, 237, 0.12)',
+                          border: '1px solid rgba(168, 85, 247, 0.25)',
+                        }}
+                        transition={{ type: 'spring', stiffness: 380, damping: 32 }}
+                      />
+                    )}
+                    <span className="relative z-10">{link.label}</span>
+                  </a>
+                );
+              })}
               <a
                 href={`mailto:${personalInfo.email}`}
                 className="btn-primary text-sm py-3 mt-2 justify-center text-center"
