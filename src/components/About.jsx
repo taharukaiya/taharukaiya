@@ -112,15 +112,14 @@ export default function About() {
               className="min-w-0"
             >
               <h4 className="text-slate-400 text-sm font-mono mb-3">// Who I Am</h4>
-              {/* Always 2 columns, equal widths, no overflow */}
               <div className="grid grid-cols-2 gap-2.5">
                 {traits.map((t, i) => (
                   <motion.div
                     key={i}
                     whileHover={{ scale: 1.03 }}
-                    className="glass-card px-3 py-3 flex items-center gap-2.5 cursor-default min-w-0"
+                    className="glass-card p-3 sm:p-4 flex items-center gap-2.5 cursor-default min-w-0 min-h-[56px]"
                   >
-                    <span className="text-lg flex-shrink-0">{t.icon}</span>
+                    <span className="text-xl flex-shrink-0">{t.icon}</span>
                     <span className="text-slate-300 text-xs sm:text-sm font-medium leading-tight">
                       {t.label}
                     </span>
@@ -217,7 +216,7 @@ export default function About() {
                 {funFacts.map((item, i) => (
                   <div
                     key={i}
-                    className="glass-card p-3 sm:p-4 flex items-center gap-2.5 min-w-0"
+                    className="glass-card p-3 sm:p-4 flex items-center gap-2.5 min-w-0 min-h-[56px]"
                   >
                     <span className="text-xl flex-shrink-0">{item.icon}</span>
                     <span className="text-slate-300 text-xs sm:text-sm leading-tight">{item.label}</span>
