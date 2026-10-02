@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { personalInfo } from '../data/portfolioData';
-import { FiGithub, FiLinkedin, FiHeart, FiArrowUp } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiArrowUp } from 'react-icons/fi';
 import { FaFacebookF } from 'react-icons/fa';
 
 export default function Footer() {
@@ -58,17 +58,12 @@ export default function Footer() {
         <div className="h-px mb-6" style={{ background: 'rgba(124, 58, 237, 0.1)' }} />
 
         {/* Copyright */}
-        <div className="text-center">
-          <p className="text-slate-500 text-sm flex items-center justify-center gap-2">
-            Designed & Built with{' '}
-            <FiHeart className="text-purple-400 fill-purple-400" />{' '}
-            by{' '}
-            <span className="text-purple-400 font-medium">Rukaiya Taha</span>
-            {' · '}
-            {new Date().getFullYear()}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-1">
+          <p className="text-slate-500 text-sm">
+            &copy; {new Date().getFullYear()} <span className="text-slate-400 font-medium">Rukaiya Taha</span>. All rights reserved.
           </p>
-          <p className="text-slate-600 text-xs mt-1">
-            Built with React, Vite, Tailwind CSS & Framer Motion
+          <p className="text-slate-600 text-xs">
+            Designed &amp; Developed by Rukaiya Taha
           </p>
         </div>
       </div>
