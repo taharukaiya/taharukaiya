@@ -7,7 +7,8 @@ export const personalInfo = {
   location: "Dhaka, Bangladesh",
   email: "taharukaiyah@gmail.com",
   github: "https://github.com/taharukaiya",
-  twitter: "https://twitter.com/RukaiyaTaha",
+  twitter: "https://twitter.com/RukaiyaTaha", // kept for ref
+  facebook: "https://www.facebook.com/taharu2003",
   linkedin: "https://www.linkedin.com/in/rukaiya-taha-85b6361b4/",
   hireable: true,
   bio: "Aspiring Software Engineer with experience in full-stack web development and software design. Skilled in React.js, Next.js, Node.js, Express.js, PostgreSQL, Prisma ORM, Python, Django, and REST API development. Passionate about building scalable applications, solving complex problems, and applying emerging technologies such as AI/ML and blockchain to create innovative solutions. Eager to contribute to dynamic engineering teams while expanding technical and professional expertise.",

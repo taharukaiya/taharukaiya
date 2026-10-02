@@ -95,7 +95,7 @@ export default function App() {
         </div>
       )}
 
-      <div className="relative min-h-screen">
+      <div className="relative min-h-screen overflow-x-hidden w-full">
         {/* Ambient orbs */}
         <div className="orb orb-1" />
         <div className="orb orb-2" />

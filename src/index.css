@@ -12,6 +12,8 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   body {
@@ -19,6 +21,8 @@
     color: #e2e8f0;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
   }
 
   ::-webkit-scrollbar {
@@ -148,25 +152,26 @@
 .orb {
   position: fixed;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(60px);
   pointer-events: none;
   z-index: 0;
+  overflow: hidden;
 }
 
 .orb-1 {
-  width: 500px;
-  height: 500px;
-  top: -200px;
-  right: -200px;
+  width: min(500px, 80vw);
+  height: min(500px, 80vw);
+  top: -15vw;
+  right: -15vw;
   background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
   animation: float 8s ease-in-out infinite;
 }
 
 .orb-2 {
-  width: 600px;
-  height: 600px;
-  bottom: -300px;
-  left: -200px;
+  width: min(600px, 90vw);
+  height: min(600px, 90vw);
+  bottom: -20vw;
+  left: -15vw;
   background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
   animation: float 10s ease-in-out infinite reverse;
 }

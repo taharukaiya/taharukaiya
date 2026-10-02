@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { personalInfo } from '../data/portfolioData';
-import { FiGithub, FiTwitter, FiLinkedin, FiHeart, FiArrowUp } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiHeart, FiArrowUp } from 'react-icons/fi';
+import { FaFacebookF } from 'react-icons/fa';
 
 export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -25,7 +26,7 @@ export default function Footer() {
             {[
               { icon: <FiGithub />, href: personalInfo.github },
               { icon: <FiLinkedin />, href: personalInfo.linkedin },
-              { icon: <FiTwitter />, href: personalInfo.twitter },
+              { icon: <FaFacebookF size={15} />, href: personalInfo.facebook },
             ].map(({ icon, href }, i) => (
               <motion.a
                 key={i}

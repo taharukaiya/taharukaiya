@@ -2,7 +2,8 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { personalInfo, stats } from '../data/portfolioData';
-import { FiGithub, FiTwitter, FiLinkedin, FiDownload, FiArrowDown } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiDownload, FiArrowDown } from 'react-icons/fi';
+import { FaFacebookF } from 'react-icons/fa';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 
@@ -229,7 +230,7 @@ export default function Hero() {
           {[
             { icon: <FiGithub size={18} />, href: personalInfo.github, label: 'GitHub' },
             { icon: <FiLinkedin size={18} />, href: personalInfo.linkedin, label: 'LinkedIn' },
-            { icon: <FiTwitter size={18} />, href: personalInfo.twitter, label: 'Twitter' },
+            { icon: <FaFacebookF size={16} />, href: personalInfo.facebook, label: 'Facebook' },
           ].map(({ icon, href, label }) => (
             <motion.a
               key={label}

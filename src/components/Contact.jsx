@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { personalInfo } from '../data/portfolioData';
-import { FiMail, FiGithub, FiTwitter, FiLinkedin, FiSend, FiMapPin } from 'react-icons/fi';
+import { FiMail, FiGithub, FiLinkedin, FiSend, FiMapPin } from 'react-icons/fi';
+import { FaFacebookF } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
 
 const fadeUp = {
@@ -16,7 +17,7 @@ const fadeUp = {
 const socials = [
   { icon: <FiGithub size={20} />, href: personalInfo.github, label: 'GitHub', color: '#9333EA' },
   { icon: <FiLinkedin size={20} />, href: personalInfo.linkedin, label: 'LinkedIn', color: '#0A66C2' },
-  { icon: <FiTwitter size={20} />, href: personalInfo.twitter, label: 'Twitter', color: '#1DA1F2' },
+  { icon: <FaFacebookF size={18} />, href: personalInfo.facebook, label: 'Facebook', color: '#1877F2' },
   { icon: <FiMail size={20} />, href: `mailto:${personalInfo.email}`, label: 'Email', color: '#EA4335' },
 ];
 
