@@ -152,7 +152,7 @@ export default function Hero() {
             Get In Touch
           </motion.a>
           <motion.a
-            href="/Rukaiya_Taha_Resume.pdf"
+            href="/Rukaiya-Taha-Resume.pdf"
             download
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}

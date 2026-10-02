@@ -35,7 +35,7 @@ export default function Footer() {
 
       <div
         className="px-4 sm:px-6 pt-14 pb-8"
-        style={{ background: 'rgba(2, 4, 20, 0.85)', backdropFilter: 'blur(12px)' }}
+        style={{ background: 'rgba(2, 4, 20, 0.45)', backdropFilter: 'blur(16px)' }}
       >
         <div className="max-w-7xl mx-auto">
 

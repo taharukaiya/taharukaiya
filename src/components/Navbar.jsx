@@ -97,7 +97,7 @@ export default function Navbar() {
           : ''
       }`}
       style={{
-        background: scrolled || menuOpen ? 'rgba(2, 8, 24, 0.92)' : 'transparent',
+        background: scrolled || menuOpen ? 'rgba(2, 8, 24, 0.45)' : 'transparent',
       }}
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-6 flex items-center justify-between h-16 md:h-20">
