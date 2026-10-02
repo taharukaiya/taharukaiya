@@ -134,31 +134,13 @@ export default function Hero() {
           className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center w-full sm:w-auto mb-10"
         >
           <motion.a
-            href="#projects"
-            onClick={(e) => { e.preventDefault(); scrollToId('projects'); }}
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
-            className="btn-primary text-sm sm:text-base justify-center"
-          >
-            View My Work 🚀
-          </motion.a>
-          <motion.a
-            href="#contact"
-            onClick={(e) => { e.preventDefault(); scrollToId('contact'); }}
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
-            className="btn-secondary text-sm sm:text-base justify-center"
-          >
-            Get In Touch
-          </motion.a>
-          <motion.a
             href="/Rukaiya-Taha-Resume.pdf"
             download
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="btn-secondary text-sm sm:text-base justify-center"
+            className="btn-primary text-sm sm:text-base justify-center"
           >
-            <FiDownload /> Resume
+            <FiDownload /> Download Resume
           </motion.a>
         </motion.div>
 
