@@ -5,7 +5,8 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import Experience from './components/Experience';
+import Experience from './components/Experience'; // currently renders null — uncomment in Experience.jsx when ready
+import Education from './components/Education';
 import Achievements from './components/Achievements';
 import Extra from './components/Extra';
 import Contact from './components/Contact';
@@ -117,7 +118,8 @@ export default function App() {
                 <About />
                 <Skills />
                 <Projects />
-                <Experience />
+                <Experience />{/* renders null until you add work experience — see Experience.jsx */}
+                <Education />
                 <Achievements />
                 <Extra />
                 <Contact />
