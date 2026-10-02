@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { personalInfo, stats } from '../data/portfolioData';
@@ -24,70 +23,13 @@ function scrollToId(id) {
 
 export default function Hero() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const resize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    };
-    resize();
-    window.addEventListener('resize', resize);
-
-    const ctx = canvas.getContext('2d');
-    const particles = Array.from({ length: 55 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 1.8 + 0.4,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-      alpha: Math.random() * 0.4 + 0.1,
-    }));
-
-    let animId;
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(147, 51, 234, ${p.alpha})`;
-        ctx.fill();
-      });
-      particles.forEach((p1, i) => {
-        particles.slice(i + 1).forEach(p2 => {
-          const d = Math.hypot(p1.x - p2.x, p1.y - p2.y);
-          if (d < 130) {
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(147, 51, 234, ${0.08 * (1 - d / 130)})`;
-            ctx.lineWidth = 0.8;
-            ctx.stroke();
-          }
-        });
-      });
-      animId = requestAnimationFrame(animate);
-    };
-    animate();
-    return () => {
-      cancelAnimationFrame(animId);
-      window.removeEventListener('resize', resize);
-    };
-  }, []);
 
   return (
     <section
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden grid-bg pt-20"
     >
-      {/* Canvas particle network */}
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-50 pointer-events-none" />
+      {/* Canvas particle network handled globally by GlobalParticles in App.jsx */}
 
       {/* Floating code snippets — desktop only */}
       {floatingElements.map((el, i) => (

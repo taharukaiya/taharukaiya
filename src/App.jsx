@@ -11,6 +11,7 @@ import Achievements from './components/Achievements';
 import Extra from './components/Extra';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import GlobalParticles from './components/GlobalParticles';
 
 // Cursor glow component
 function CursorGlow() {
@@ -97,6 +98,9 @@ export default function App() {
       )}
 
       <div className="relative min-h-screen overflow-x-hidden w-full">
+        {/* Global particle network — fixed canvas, covers full viewport across all sections */}
+        <GlobalParticles />
+
         {/* Ambient orbs */}
         <div className="orb orb-1" />
         <div className="orb orb-2" />
