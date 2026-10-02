@@ -193,7 +193,7 @@ export const achievements = [
     title: "Award for Academic Excellence",
     organization: "International University of Business Agriculture and Technology (IUBAT)",
     year: "2024 & 2026",
-    description: "Recognized for maintaining an outstanding academic record (CGPA: 3.97/4.00).",
+    description: "Recognized for achieving an SGPA of 4.00/4.00 in consecutive semesters.",
     icon: "🏆",
     color: "from-purple-500 to-violet-600",
   },
