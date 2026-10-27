@@ -34,7 +34,7 @@
 const rukaiya = {
   name:       "Rukaiya Taha",
   location:   "Dhaka, Bangladesh 🇧🇩",
-  education:  "B.Sc. CSE @ IUBAT (CGPA: 3.97 / 4.00) 🎓",
+  education:  "B.Sc. CSE @ IUBAT (CGPA: 3.98 / 4.00) 🎓",
   role:       "Software Engineer & Researcher",
   focus:      ["Full-Stack Development", "Blockchain", "AI/ML", "Research"],
   ambassador: "Microsoft Learn Student Ambassador (Beta) 🌐",
